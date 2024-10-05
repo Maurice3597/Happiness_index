@@ -23,3 +23,6 @@ Y_axis = st.selectbox("Select the Variable for the Vertical Axis: ", options=coo
 X_axis = st.selectbox("Select the Variable for the horizontal Axis: ", options=coordinate,
              placeholder="Select a variable for the X_axis",
              help="Choose the variable that represents the V_axis")
+
+X, Y = list(data[X_axis]), list(data[Y_axis])
+st.plotly_chart(px.scatter(x=X, y=Y, labels={'x':X_axis, 'y':Y_axis}))
