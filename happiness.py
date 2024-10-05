@@ -13,7 +13,13 @@ data = pandas.read_csv("happy.csv")
 # generosity =list(data["generosity"])
 # corruption = list(data["corruption"])
 
-coordinate = list(data.columns);print(coordinate)
-print("Hello world")
+coordinate = list(data.columns)
 coordinate = coordinate[1:];print(coordinate)
 
+st.title("In Search For Happiness")
+Y_axis = st.selectbox("Select the Variable for the Vertical Axis: ", options=coordinate,
+             placeholder="Select a variable for the Y_axis",
+             help="Choose the variable that represents the Y_axis")
+X_axis = st.selectbox("Select the Variable for the horizontal Axis: ", options=coordinate,
+             placeholder="Select a variable for the X_axis",
+             help="Choose the variable that represents the V_axis")
